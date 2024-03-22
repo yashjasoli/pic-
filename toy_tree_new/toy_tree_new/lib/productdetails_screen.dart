@@ -1,8 +1,6 @@
-import 'package:animated_toggle_switch/animated_toggle_switch.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_swipe_button/flutter_swipe_button.dart';
 import 'package:slide_action/slide_action.dart';
 import 'package:toy_tree_new/model/product_details_model.dart';
 import 'package:toy_tree_new/notifions/appTheme.dart';

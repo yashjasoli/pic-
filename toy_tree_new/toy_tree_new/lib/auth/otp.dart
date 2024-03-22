@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:pinput/pinput.dart';
 import 'package:toy_tree_new/addresh/location.dart';
 import 'package:toy_tree_new/auth/ragition.dart';
 import 'package:toy_tree_new/firebase.dart';
-import 'package:toy_tree_new/home/home.dart';
-import 'package:toy_tree_new/provider/auth_provider.dart';
-import 'package:toy_tree_new/utility/consts/colors.dart';
-import 'package:provider/provider.dart';
 
 class OtpScreen extends StatefulWidget {
   final String? verificationId;

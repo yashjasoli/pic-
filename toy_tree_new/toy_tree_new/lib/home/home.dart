@@ -3,7 +3,6 @@ import 'package:toy_tree_new/catogary/catogary.dart';
 import 'package:toy_tree_new/home/home_screen.dart';
 import 'package:toy_tree_new/order/order.dart';
 import 'package:toy_tree_new/utility/consts/consts.dart';
-import 'package:circle_nav_bar/circle_nav_bar.dart';
 import '../profaile/profaile.dart';
 
 class Home extends StatefulWidget {
@@ -129,7 +128,8 @@ class _HomeState extends State<Home> {
                           setState(
                             () {
                             //  Get.offAll(OrderScreen());
-                              currentScreen = const OrderScreen();
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=> OrderScreen()));
+                            //  currentScreen = const OrderScreen();
                               currentTab = 1;
                             },
                           );

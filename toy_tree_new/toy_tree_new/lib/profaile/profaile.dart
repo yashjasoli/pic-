@@ -1,12 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:toy_tree_new/auth/ragition.dart';
+import 'package:toy_tree_new/subscription/subscription_screen.dart';
 import 'package:toy_tree_new/utility/consts/consts.dart';
-import 'package:toy_tree_new/utility/consts/list.dart';
 
 class AccountScreen extends StatefulWidget {
   const AccountScreen({super.key});
@@ -44,7 +41,7 @@ class _AccountScreenState extends State<AccountScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 0),
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 12),
+                  margin: const EdgeInsets.symmetric(horizontal: 12),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(5),
@@ -56,14 +53,14 @@ class _AccountScreenState extends State<AccountScreen> {
                           vertical: 8,
                         ),
                         child: ListTile(
-                          leading: CircleAvatar(
+                          leading: const CircleAvatar(
                             backgroundColor: golden,
                             radius: 23,
-                            child: const Text('YJ'),
+                            child: Text('YJ'),
                           ),
-                          title: Text(
+                          title: const Text(
                             'Yash',
-                            style: const TextStyle(
+                            style: TextStyle(
                               fontSize: 17,
                               fontWeight: FontWeight.w600,
                             ),
@@ -83,7 +80,7 @@ class _AccountScreenState extends State<AccountScreen> {
                                     borderRadius:
                                     BorderRadius.circular(
                                         20)),
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     'Edit',
                                     style: TextStyle(
@@ -91,23 +88,23 @@ class _AccountScreenState extends State<AccountScreen> {
                                   ),
                                 )),
                           ),
-                          subtitle: Column(
+                          subtitle: const Column(
                             crossAxisAlignment:
                             CrossAxisAlignment.start,
                             children: [
-                              const SizedBox(
+                              SizedBox(
                                 height: 5,
                               ),
                               Text(
                                 '7383006215',
-                                style: const TextStyle(
+                                style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                     color: Colors.black),
                               ),
                               Text(
                                 'yash@gmail.com',
-                                style: const TextStyle(
+                                style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                     color: Colors.black),
@@ -219,14 +216,17 @@ class _AccountScreenState extends State<AccountScreen> {
               )*/
               Column(
                 children: [
-                  const ListTile(
-                    leading: Icon(
+                   ListTile(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const SubscriptionScreen()));
+                    },
+                    leading: const Icon(
                       Icons.paid,
                     ),
-                    title: Text(
+                    title: const Text(
                       'My Subscription',
                     ),
-                    trailing:   Icon(Icons.navigate_next),
+                    trailing:   const Icon(Icons.navigate_next),
                   ),
                   const ListTile(
                     leading: Icon(
@@ -269,15 +269,15 @@ class _AccountScreenState extends State<AccountScreen> {
                       SharedPreferences sharedPreferences =
                           await SharedPreferences.getInstance();
                       sharedPreferences.setBool("isLogin", false);
-                      Get.offAll(RegisterScreen());
+                      Get.offAll(const RegisterScreen());
                     },
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.logout,
                     ),
-                    title: Text(
+                    title: const Text(
                       'Log out',
                     ),
-                    trailing:   Icon(Icons.navigate_next),
+                    trailing:   const Icon(Icons.navigate_next),
                   ),
                 ],
               )
@@ -294,13 +294,13 @@ class _AccountScreenState extends State<AccountScreen> {
 
               Container(
                 height: 150,
-                margin: EdgeInsets.symmetric(vertical: 20),
+                margin: const EdgeInsets.symmetric(vertical: 20),
                 color: Colors.white,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(margin: EdgeInsets.only(top: 10), height: 1,color: Colors.black38,),
-                    Text('Follow us on social media',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),),
+                    Container(margin: const EdgeInsets.only(top: 10), height: 1,color: Colors.black38,),
+                    const Text('Follow us on social media',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -311,7 +311,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               child: Image.network('https://downloadr2.apkmirror.com/wp-content/uploads/2023/09/90/650c50b6190bf_com.facebook.lite.png',height: 30,width: 30,),
                             ),
                           ),
-                          SizedBox(width: 5,),
+                          const SizedBox(width: 5,),
                           GestureDetector(
                             child: CircleAvatar(
                               backgroundColor: lightGrey,
@@ -319,7 +319,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               child: Image.network('https://www.edigitalagency.com.au/wp-content/uploads/new-Instagram-logo-png-full-colour-glyph.png',height: 30,width: 30,),
                             ),
                           ),
-                          SizedBox(width: 5,),
+                          const SizedBox(width: 5,),
                           InkWell(
                             child: CircleAvatar(
                               backgroundColor: lightGrey,
@@ -330,7 +330,7 @@ class _AccountScreenState extends State<AccountScreen> {
                               ),
                             ),
                           ),
-                          SizedBox(width: 5,),
+                          const SizedBox(width: 5,),
                           InkWell(
                             child: CircleAvatar(
                               backgroundColor: lightGrey,
@@ -353,7 +353,7 @@ class _AccountScreenState extends State<AccountScreen> {
                       //           ),
                       //         )),
                     ),
-                    Container(margin: EdgeInsets.only(bottom: 10), height: 1,color: Colors.black38,),
+                    Container(margin: const EdgeInsets.only(bottom: 10), height: 1,color: Colors.black38,),
                   ],
                 ),
               ),

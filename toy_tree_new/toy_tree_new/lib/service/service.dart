@@ -4,7 +4,7 @@ import 'package:http_parser/http_parser.dart';
 import 'package:http/http.dart' as http;
 
 class service {
-  static var baseurl = "https://connectgoinfoware.com/toytree/api/";
+  static var baseurl = "https://sainibuilders.com/demo/";
   static var securitycode = "yp7280uvfkvdirgjkpo";
 
   singup(String name, email, address, floor, lanmark, dob, gender, number) async {
@@ -45,7 +45,7 @@ class service {
     var securitycode = "yp7280uvfkvdirgjkpo";
     var jsonResponce;
 
-    var url = "https://connectgoinfoware.com/toytree/api/product_details.php";
+    var url = "https://sainibuilders.com/demo/product_details.php";
 
     // Create a MultipartRequest
     var request = http.MultipartRequest('POST', Uri.parse(url));
@@ -75,7 +75,7 @@ class service {
   }
   product_details(String id) async {
     var jsonResponce;
-    var url = "https://connectgoinfoware.com/toytree/api/product_details.php";
+    var url = "https://sainibuilders.com/demo/product_details.php";
     final body = {
       'prodcut_id': '1',
     };
@@ -98,7 +98,7 @@ class service {
   }
   get_productDetails(String pid, ) async {
     var responseJson;
-    var url = "https://connectgoinfoware.com/toytree/api/product_details.php";
+    var url = "https://sainibuilders.com/demo/product_details.php";
     final body = {'prodcut_id': 1, };
     print( " prodDetails: " + url + " --" + json.encode(body));
 
